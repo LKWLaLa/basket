@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const greeting = 'Hello World'
+const greeting = 'Hiya World'
 
 ReactDOM.render(
   <div>{greeting}</div>,
   document.getElementById('app')
 );
+
+module.hot.accept();
