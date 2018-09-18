@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import AddItem from './AddItem'
 import List from './List'
 
 class ListContainer extends Component {
@@ -14,10 +15,26 @@ class ListContainer extends Component {
     }
   }
 
+  idCount = 3
+
+  addNewItem = (item) => {
+    this.idCount ++
+    item.id = this.idCount
+    this.setState({ items: [...this.state.items, item]})
+  }
+
+  deleteItem = (id) => {
+    this.setState({items:  
+      this.state.items.filter(item => item.id !== id)
+    })
+  }
+
   render(){
     return (
       <div className="list-container">
-        <List items={this.state.items}/>
+        <h1>Grocery List</h1>
+        <AddItem addNewItem={this.addNewItem}/>
+        <List items={this.state.items} deleteItem={this.deleteItem}/>
       </div>
       )
     }
