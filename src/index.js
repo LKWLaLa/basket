@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style.scss'
+import './style.scss';
+import App from './components/App'
 
 const greeting = 'Hiya World'
 
 ReactDOM.render(
-  <div className="app">{greeting}</div>,
+  <App />,
   document.getElementById('root')
 );
 
