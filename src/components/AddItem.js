@@ -16,7 +16,7 @@ class AddItem extends Component {
 
   addItemHandler = (e) => {
     e.preventDefault()
-    let item = {name: this.state.item, quantity: this.state.qty, inCart: false}
+    let item = {name: this.state.item, quantity: this.state.qty, inBasket: false}
     this.setState({item: '', qty: ''})
     this.props.addNewItem(item)
   }

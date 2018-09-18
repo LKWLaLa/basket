@@ -8,9 +8,9 @@ class ListContainer extends Component {
     super(props)
     this.state = {
       items: [
-        {name: "oranges", quantity: 3, inCart: false, id: 1},
-        {name: "fancy cheese", quantity: 2, inCart: false, id: 2},
-        {name: "milk", quantity: 1, inCart: false, id: 3}
+        {name: "oranges", quantity: 3, inBasket: false, id: 1},
+        {name: "fancy cheese", quantity: 2, inBasket: false, id: 2},
+        {name: "milk", quantity: 1, inBasket: false, id: 3}
       ]
     }
   }
@@ -29,12 +29,26 @@ class ListContainer extends Component {
     })
   }
 
+  toggleInBasket = (id) => {
+    let newItems = [...this.state.items].map(item => {
+      if(item.id === parseInt(id)){
+        item.inBasket = !item.inBasket
+      }
+      return item
+    }) 
+    this.setState({ items: newItems})
+  }
+
   render(){
     return (
       <div className="list-container">
         <h1>Grocery List</h1>
         <AddItem addNewItem={this.addNewItem}/>
-        <List items={this.state.items} deleteItem={this.deleteItem}/>
+        <button className="clear-basket-items">
+          Clear all 'in basket' items
+        </button>
+        <List items={this.state.items} deleteItem={this.deleteItem}
+          toggleInBasket={this.toggleInBasket}/>
       </div>
       )
     }

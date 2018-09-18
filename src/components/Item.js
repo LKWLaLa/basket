@@ -6,9 +6,14 @@ const Item = (props) => {
   let handleDelete = () => {
     props.deleteItem(id)
   }
+
+  let handleBasketChange = (e) => {
+    props.toggleInBasket(e.target.id)
+  }
+
   return (
     <div className="item">
-      <input type="checkbox" id={id} /> 
+      <input type="checkbox" id={id} onChange={handleBasketChange}/> 
       <label htmlFor={id}>
         <span className="item-name">{name}</span>
         <span className="item-quantity">{quantity}</span>
