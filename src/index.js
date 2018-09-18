@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style.scss';
+import './style.sass';
 import App from './components/App'
 
 const greeting = 'Hiya World'
