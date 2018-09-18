@@ -11,8 +11,7 @@ class ListContainer extends Component {
         {name: "oranges", quantity: 3, inBasket: false, id: 1},
         {name: "fancy cheese", quantity: 2, inBasket: false, id: 2},
         {name: "milk", quantity: 1, inBasket: false, id: 3}
-      ],
-      basket: []
+      ]
     }
   }
 
@@ -37,9 +36,7 @@ class ListContainer extends Component {
       }
       return item
     }) 
-    let basketItems = this.state.items.filter(
-      item => item.inBasket === true)
-    this.setState({ items: newItems, basket: basketItems})
+    this.setState({ items: newItems})
   }
 
   clearInBasket = () => {
