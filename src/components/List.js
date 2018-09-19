@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from './Item';
+import AddItem from './AddItem'
 
 const List = (props) => {
   let {items} = props
@@ -11,6 +12,8 @@ const List = (props) => {
 
   return (
     <div className="list">
+       <h1>Grocery List</h1>
+       <AddItem addNewItem={props.addNewItem}/>
       {listItems}
     </div>
   )

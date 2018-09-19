@@ -1,21 +1,18 @@
 import React, {Component} from 'react';
-import AddItem from './AddItem'
+import recurringItems from '../itemsHelper'
 import List from './List'
+import OptionsContainer from './OptionsContainer'
 
 class ListContainer extends Component {
 
   constructor(props){
     super(props)
     this.state = {
-      items: [
-        {name: "oranges", quantity: 3, inBasket: false, id: 1},
-        {name: "fancy cheese", quantity: 2, inBasket: false, id: 2},
-        {name: "milk", quantity: 1, inBasket: false, id: 3}
-      ]
+      items: []
     }
   }
 
-  idCount = 3
+  idCount = recurringItems.length
 
   addNewItem = (item) => {
     this.idCount ++
@@ -45,18 +42,26 @@ class ListContainer extends Component {
       this.setState({ items: nonBasketItems, showInBasket: false})
   }
 
+  addRecurringItems = () => {
+    this.setState({items: [...this.state.items, ...recurringItems]})
+  }
+
+  addNewRecurringItem = (item) => {
+    this.idCount ++
+    item.id = this.idCount
+    recurringItems.push(item)
+    this.forceUpdate()
+  }
 
 
   render(){
     return (
-      <div className="list-container">
-        <h1>Grocery List</h1>
-        <AddItem addNewItem={this.addNewItem}/>
-        <button className="clear-basket-items" onClick={this.clearInBasket}>
-          Clear in-basket items
-        </button>
-        <List items={this.state.items} deleteItem={this.deleteItem}
-          toggleInBasket={this.toggleInBasket}/>
+      <div className="list-container">      
+        <List items={this.state.items} addNewItem={this.addNewItem} 
+        deleteItem={this.deleteItem} toggleInBasket={this.toggleInBasket}/>
+        <OptionsContainer clearInBasket={this.clearInBasket}
+        addRecurringItems={this.addRecurringItems} recurringItems={recurringItems}
+        addNewRecurringItem={this.addNewRecurringItem} />
       </div>
       )
     }

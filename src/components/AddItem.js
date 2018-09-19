@@ -18,7 +18,9 @@ class AddItem extends Component {
     e.preventDefault()
     let item = {name: this.state.item, quantity: this.state.qty, inBasket: false}
     this.setState({item: '', qty: ''})
-    this.props.addNewItem(item)
+    if(this.props.addNewItem){
+      this.props.addNewItem(item)
+    } else {this.props.addNewRecurringItem(item)}
   }
   
   render(){
