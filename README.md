@@ -4,7 +4,7 @@
 
 ### Dependencies:
 
-- This project is built with React, v 16.5.1, webpack v 4.19.0, and babel-core 6.26.  [Yarn](https://yarnpkg.com/en/) is used for package management.  Styling is Sass.
+- This project is built with React, `v 16.5.1`, webpack `v 4.19.0`, and babel-core `v 6.26`.  [Yarn](https://yarnpkg.com/en/) is used for package management.  Styling is Sass.
 
 
 ### Directions to run:
