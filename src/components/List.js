@@ -13,7 +13,7 @@ const List = (props) => {
   return (
     <div className="list">
        <h1>Grocery List</h1>
-       <AddItem addNewItem={props.addNewItem}/>
+       <AddItem className='add-list-item' addNewItem={props.addNewItem}/>
       {listItems}
     </div>
   )

@@ -6,8 +6,7 @@ const RecurringItem = (props) => {
 
   return (
     <div className="recurring-item">
-      <span className="item-name">{name}</span>
-      <span className="item-quantity">{quantity}</span>   
+      <div className="item-name">{quantity} {name}</div>
     </div>
   )
 }

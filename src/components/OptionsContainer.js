@@ -31,19 +31,19 @@ class OptionsContainer extends Component {
 
   render(){
     return (
-      <div className="list-settings">
-        <h2>Options</h2>
+      <div className="options">
+        <h1>Options</h1>
         <button className="clear-basket-items" onClick={this.clearBasketHandler}>
           Clear in-basket items
-        </button> 
+        </button><br /> 
 
         <button className="add-recurring-items" onClick={this.recurringItemsHandler}
         disabled={this.state.buttonDisabled}>
-         Add my recurring items
-        </button> 
+         Add my recurring items to list
+        </button><br /> 
 
         <button className="show-recurring-items" onClick={this.showRecurringItems}>
-         Show recurring items list
+         Show my recurring items
         </button>
         
         {this.state.showRecurring ? 

@@ -25,7 +25,7 @@ class AddItem extends Component {
   
   render(){
     return (
-      <form className="item" onSubmit={this.addItemHandler}>
+      <form className="add-item" onSubmit={this.addItemHandler}>
         <input type="text" name="item" placeholder="ex - bananas..." 
           onChange={this.handleChange} value={this.state.item}/>
         <input type="number" name="qty" min="1" max="100" placeholder="qty" 

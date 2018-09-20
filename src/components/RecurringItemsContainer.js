@@ -17,7 +17,7 @@ const RecurringItemsContainer = (props) => {
        <h3>Your recurring items:</h3>
        <AddItem addNewRecurringItem={props.addNewRecurringItem}/>
       {items}
-      <button onClick={handleClose}>Close</button>
+      <button className="close" onClick={handleClose}>Close</button>
     </div>
   )
 }
