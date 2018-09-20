@@ -9,5 +9,5 @@
 
 ### Directions to run:
 
-Fork or clone this repo, then cd in the directory on your local machine. Run `yarn start`, and naviage to `localhost:8080` to see the project in your browser.
+Fork or clone this repo, then cd in the directory on your local machine. Run `yarn install`, followed by `yarn start`, and navigate to `localhost:8080` to see the project in your browser.
 
