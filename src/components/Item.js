@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Item = (props) => {
-  let {name, quantity, inCart, id} = props.item
+  let {name, quantity, id} = props.item
 
   let handleDelete = () => {
     props.deleteItem(id)

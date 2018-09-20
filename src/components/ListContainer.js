@@ -8,7 +8,8 @@ class ListContainer extends Component {
   constructor(props){
     super(props)
     this.state = {
-      items: []
+      items: [],
+      recurringItems: recurringItems
     }
   }
 
@@ -43,14 +44,13 @@ class ListContainer extends Component {
   }
 
   addRecurringItems = () => {
-    this.setState({items: [...this.state.items, ...recurringItems]})
+    this.setState({items: [...this.state.items, ...this.state.recurringItems]})
   }
 
   addNewRecurringItem = (item) => {
     this.idCount ++
     item.id = this.idCount
-    recurringItems.push(item)
-    this.forceUpdate()
+    this.setState({recurringItems: [...this.state.recurringItems, item]})
   }
 
 
@@ -60,7 +60,7 @@ class ListContainer extends Component {
         <List items={this.state.items} addNewItem={this.addNewItem} 
         deleteItem={this.deleteItem} toggleInBasket={this.toggleInBasket}/>
         <OptionsContainer clearInBasket={this.clearInBasket}
-        addRecurringItems={this.addRecurringItems} recurringItems={recurringItems}
+        addRecurringItems={this.addRecurringItems} recurringItems={this.state.recurringItems}
         addNewRecurringItem={this.addNewRecurringItem} />
       </div>
       )
